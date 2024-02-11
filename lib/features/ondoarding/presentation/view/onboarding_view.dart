@@ -13,15 +13,19 @@ class OnboardingView extends StatelessWidget {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              CusomNavBar(),
+              const CusomNavBar(),
               OnboardingWidgetBody(),
-              CustomBtn(text: AppStrings.next),
-              SizedBox(
+              const SizedBox(
+                height: 150,
+              ),
+              const CustomBtn(text: AppStrings.next),
+              const SizedBox(
                 height: 17,
               )
             ],

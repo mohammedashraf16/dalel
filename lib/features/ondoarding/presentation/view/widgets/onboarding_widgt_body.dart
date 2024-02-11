@@ -5,17 +5,29 @@ import 'package:flutter/material.dart';
 
 class OnboardingWidgetBody extends StatelessWidget {
   OnboardingWidgetBody({super.key});
-  PageController _controller = PageController();
+  final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 500,
       child: PageView.builder(
+        physics: const BouncingScrollPhysics(),
         controller: _controller,
         itemCount: 3,
         itemBuilder: (context, index) {
           return Column(
             children: [
-              Image.asset(Assets.imagesOnboarding1),
+              Container(
+                height: 292,
+                width: 343,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(
+                        Assets.imagesOnboarding1,
+                      ),
+                      fit: BoxFit.fill),
+                ),
+              ),
               const SizedBox(
                 height: 24,
               ),
@@ -30,6 +42,8 @@ class OnboardingWidgetBody extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               const SizedBox(
@@ -39,6 +53,8 @@ class OnboardingWidgetBody extends StatelessWidget {
                 "Using our app’s history libraries you can find many historical periods ",
                 style: CustomTextStyles.poppins300Style16,
                 textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           );
