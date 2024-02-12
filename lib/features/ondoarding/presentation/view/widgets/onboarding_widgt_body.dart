@@ -1,19 +1,21 @@
-import 'package:dalel/core/utlis/app_assets.dart';
 import 'package:dalel/core/utlis/app_text_style.dart';
 import 'package:dalel/features/ondoarding/data/models/on_boarding_model.dart';
 import 'package:dalel/features/ondoarding/presentation/view/widgets/custom_smooth_page.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingWidgetBody extends StatelessWidget {
-  OnboardingWidgetBody({super.key});
-  final PageController _controller = PageController();
+  const OnboardingWidgetBody(
+      {super.key, required this.controller, this.onPageChanged});
+  final PageController controller;
+  final Function(int)? onPageChanged;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 500,
       child: PageView.builder(
+        onPageChanged: onPageChanged,
         physics: const BouncingScrollPhysics(),
-        controller: _controller,
+        controller: controller,
         itemCount: OnBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
@@ -32,7 +34,7 @@ class OnboardingWidgetBody extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              CustomSmoothPageIndecator(controller: _controller),
+              CustomSmoothPageIndecator(controller: controller),
               const SizedBox(
                 height: 32,
               ),
