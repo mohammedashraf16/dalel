@@ -1,5 +1,6 @@
 import 'package:dalel/core/utlis/app_assets.dart';
 import 'package:dalel/core/utlis/app_text_style.dart';
+import 'package:dalel/features/ondoarding/data/models/on_boarding_model.dart';
 import 'package:dalel/features/ondoarding/presentation/view/widgets/custom_smooth_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,17 +14,17 @@ class OnboardingWidgetBody extends StatelessWidget {
       child: PageView.builder(
         physics: const BouncingScrollPhysics(),
         controller: _controller,
-        itemCount: 3,
+        itemCount: OnBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
             children: [
               Container(
                 height: 292,
                 width: 343,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
-                        Assets.imagesOnboarding1,
+                        OnBoardingData[index].imagePath,
                       ),
                       fit: BoxFit.fill),
                 ),
@@ -37,7 +38,7 @@ class OnboardingWidgetBody extends StatelessWidget {
               ),
               Center(
                 child: Text(
-                  "Explore The history with Dalel in a smart way",
+                  OnBoardingData[index].title,
                   style: CustomTextStyles.poppins500Style24.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -50,7 +51,7 @@ class OnboardingWidgetBody extends StatelessWidget {
                 height: 16,
               ),
               Text(
-                "Using our app’s history libraries you can find many historical periods ",
+                OnBoardingData[index].subTitle,
                 style: CustomTextStyles.poppins300Style16,
                 textAlign: TextAlign.center,
                 maxLines: 2,
