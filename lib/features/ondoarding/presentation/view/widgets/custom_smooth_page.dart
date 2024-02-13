@@ -13,7 +13,7 @@ class CustomSmoothPageIndecator extends StatelessWidget {
       effect: ExpandingDotsEffect(
         dotHeight: 7,
         dotWidth: 10,
-        activeDotColor: AppColors.deebBrown,
+        activeDotColor: AppColors.deepBrown,
       ),
     );
   }

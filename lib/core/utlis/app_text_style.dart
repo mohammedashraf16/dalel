@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 
 abstract class CustomTextStyles {
   static final pacifico400Style64 = TextStyle(
-      color: AppColors.deebBrown,
+      color: AppColors.deepBrown,
       fontSize: 64,
       fontWeight: FontWeight.w400,
       fontFamily: "Pacifico");
 
-  static final pacifico600Style28 = TextStyle(
+  static final Poppins600Style28 = TextStyle(
       color: AppColors.black,
       fontSize: 28,
       fontWeight: FontWeight.w600,
       fontFamily: "Poppins");
-  static final pacifico500Style18 = TextStyle(
+  static final Poppins500Style18 = TextStyle(
       color: AppColors.grey,
       fontSize: 18,
       fontWeight: FontWeight.w500,
       fontFamily: "Poppins");
-  static final pacifico400Style12 = TextStyle(
-      color: AppColors.deebGrey,
+  static final Poppins400Style12 = TextStyle(
+      color: AppColors.deepGrey,
       fontSize: 12,
       fontWeight: FontWeight.w400,
       fontFamily: "Poppins");

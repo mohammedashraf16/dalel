@@ -1,9 +1,8 @@
-import 'package:dalel/core/utlis/app_color.dart';
 import 'package:dalel/core/utlis/app_strings.dart';
-import 'package:dalel/core/utlis/app_text_style.dart';
 import 'package:dalel/core/widgets/custom_btn.dart';
 import 'package:dalel/features/auth/presentation/widgets/custom_terms_and_conditions.dart';
 import 'package:dalel/features/auth/presentation/widgets/custom_text_field.dart';
+import 'package:dalel/features/auth/presentation/widgets/text_have_account_widget.dart';
 import 'package:dalel/features/auth/presentation/widgets/welcome_text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -75,26 +74,6 @@ class SignUpView extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class HaveAnAccountWidget extends StatelessWidget {
-  const HaveAnAccountWidget(
-      {super.key, required this.text1, required this.text2});
-  final String text1, text2;
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      child: Text.rich(TextSpan(children: [
-        TextSpan(style: CustomTextStyles.pacifico400Style12, text: text1),
-        TextSpan(
-          style: CustomTextStyles.pacifico400Style12.copyWith(
-            color: AppColors.lightGrey,
-          ),
-          text: text2,
-        ),
-      ])),
     );
   }
 }
