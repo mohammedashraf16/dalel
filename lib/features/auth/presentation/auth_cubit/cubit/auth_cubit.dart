@@ -38,12 +38,31 @@ class AuthCubit extends Cubit<AuthState> {
     emit(TermsAndConditionUpdateState());
   }
 
-  void obscurePasswordText() {
+  obscurePasswordText() {
     if (obscurePasswordTextValue == true) {
       obscurePasswordTextValue = false;
     } else {
       obscurePasswordTextValue = true;
     }
     emit(ObscurePasswordTextUpdateState());
+  }
+
+  signInWithEmailAndPassword() async {
+    try {
+      emit(SignInLoadingState());
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAddress!,
+        password: password!,
+      );
+      emit(SignInSuccessState());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        emit(SignInFailurState("No user found for that email."));
+      } else if (e.code == 'wrong-password') {
+        emit(SignInFailurState("Wrong password provided for that user."));
+      }
+    } catch (e) {
+      emit(SignInFailurState(e.toString()));
+    }
   }
 }

@@ -35,4 +35,10 @@ abstract class CustomTextStyles {
     fontSize: 16,
     fontFamily: "Poppins",
   );
+  static final saira700Style32 = TextStyle(
+    fontWeight: FontWeight.bold,
+    color: AppColors.offWhite,
+    fontSize: 32,
+    fontFamily: "Saira",
+  );
 }

@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
         getIt<CacheHelper>().getData(key: "isOnBoardingVisited") ?? false;
     if (isOnBoardingVisited == true) {
       FirebaseAuth.instance.currentUser == null
-          ? delayedNavigate(context, "/SignUp")
+          ? delayedNavigate(context, "/SignIn")
           : delayedNavigate(context, "/home");
     } else {
       delayedNavigate(context, "/onboarding");
