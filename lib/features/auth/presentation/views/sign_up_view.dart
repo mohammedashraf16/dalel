@@ -9,34 +9,39 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: CustomScrollView(
           slivers: [
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: SizedBox(
                 height: 182,
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: WelcomeTextWidgt(text: AppStrings.welcome),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: SizedBox(
                 height: 44,
               ),
             ),
             SliverToBoxAdapter(child: CustomSignUpForm()),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: SizedBox(
                 height: 16,
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: HaveAnAccountWidget(
                 text1: AppStrings.alreadyHaveAnAccount,
                 text2: AppStrings.signIn,
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 16,
               ),
             ),
           ],
