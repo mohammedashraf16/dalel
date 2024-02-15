@@ -3,14 +3,19 @@ import 'package:dalel/core/utlis/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField(
-      {super.key,
-      required this.labelText,
-      this.onChanged,
-      this.onFieldSubmitted});
+  const CustomTextFormField({
+    super.key,
+    required this.labelText,
+    this.onChanged,
+    this.onFieldSubmitted,
+    this.obscureText,
+    this.suffixIcon,
+  });
   final String labelText;
   final Function(String)? onChanged;
   final Function(String)? onFieldSubmitted;
+  final bool? obscureText;
+  final Widget? suffixIcon;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,8 +30,10 @@ class CustomTextFormField extends StatelessWidget {
         },
         onChanged: onChanged,
         onFieldSubmitted: onFieldSubmitted,
+        obscureText: obscureText ?? false,
         decoration: InputDecoration(
           labelText: labelText,
+          suffixIcon: suffixIcon,
           labelStyle: CustomTextStyles.Poppins500Style18,
           border: getborderstyle(),
           enabledBorder: getborderstyle(),
