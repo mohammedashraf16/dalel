@@ -23,6 +23,15 @@ class SignInFailurState extends AuthState {
   SignInFailurState(this.errorMessage);
 }
 
+class ResetPasswordLoadingState extends AuthState {}
+
+class ResetPasswordSuccessState extends AuthState {}
+
+class ResetPasswordFailurState extends AuthState {
+  final String errorMessage;
+  ResetPasswordFailurState(this.errorMessage);
+}
+
 class TermsAndConditionUpdateState extends AuthState {}
 
 class ObscurePasswordTextUpdateState extends AuthState {}

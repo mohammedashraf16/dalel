@@ -3,8 +3,8 @@ class Assets {
 
   /// Assets for imagesImagesForgetPassword
   /// assets/images/imagesForgetPassword.png
-  static const String imagesImagesForgetPassword =
-      "assets/images/imagesForgetPassword.png";
+  static const String imagesImagesForgotPassword =
+      "assets/images/imagesForgotPassword.png";
 
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.png

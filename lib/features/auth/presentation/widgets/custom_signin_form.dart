@@ -4,7 +4,7 @@ import 'package:dalel/core/utlis/app_color.dart';
 import 'package:dalel/core/utlis/app_strings.dart';
 import 'package:dalel/core/widgets/custom_btn.dart';
 import 'package:dalel/features/auth/presentation/auth_cubit/cubit/auth_cubit.dart';
-import 'package:dalel/features/auth/presentation/widgets/forget_password_text_widget.dart';
+import 'package:dalel/features/auth/presentation/widgets/forgot_password_text_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -56,7 +56,7 @@ class CustomSignInForm extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              const ForgetPasswordTextWidget(),
+              const ForgotPasswordTextWidget(),
               const SizedBox(
                 height: 150,
               ),
