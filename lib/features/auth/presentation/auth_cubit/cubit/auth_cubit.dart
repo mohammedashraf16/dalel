@@ -16,7 +16,7 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> signInFormKey = GlobalKey();
   GlobalKey<FormState> resetPasswordFormKey = GlobalKey();
 
-  Future<void> signUpWithEmailAndPassword() async {
+ signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -84,7 +84,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-  Future<void> resetPasswordwithLink() async {
+   resetPasswordWithLink() async {
     try {
       emit(ResetPasswordLoadingState());
       await FirebaseAuth.instance.sendPasswordResetEmail(email: emailAddress!);
@@ -93,15 +93,17 @@ class AuthCubit extends Cubit<AuthState> {
       emit(ResetPasswordFailurState(e.toString()));
     }
   }
-
-  Future<void> addUserProfile() async {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
-    await users.add(
-      {
-        'first_name': firstName,
-        'last_name': lastName,
-        'email': emailAddress,
-      },
-    );
+addUserProfile(){
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  Future<void> addUser() {
+    return users
+        .add({
+      'first_name': firstName, // John Doe
+      'last_name': lastName, // Stokes and Sons
+      'email': emailAddress // 42
+    },);
   }
+}
+
+
 }
