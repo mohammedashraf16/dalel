@@ -38,17 +38,17 @@ class CustomForgotPasswordForm extends StatelessWidget {
                 const SizedBox(
                   height: 185,
                 ),
-                state is SignInLoadingState
+                state is ResetPasswordLoadingState
                     ? CircularProgressIndicator(
                         color: AppColors.primaryColor,
                       )
                     : CustomBtn(
                         text: AppStrings.sendResetPasswordLink,
-                        onPressed: () {
+                        onPressed: () async {
                           {
                             if (authCubit.resetPasswordFormKey.currentState!
                                 .validate()) {
-                              authCubit.resetPasswordwithLink();
+                              await authCubit.resetPasswordwithLink();
                             }
                           }
                         },

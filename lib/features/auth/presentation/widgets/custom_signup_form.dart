@@ -10,7 +10,7 @@ import 'custom_terms_and_conditions.dart';
 import 'custom_text_field.dart';
 
 class CustomSignUpForm extends StatelessWidget {
-  CustomSignUpForm({super.key});
+  const CustomSignUpForm({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
@@ -76,11 +76,11 @@ class CustomSignUpForm extends StatelessWidget {
                           ? AppColors.grey
                           : null,
                       text: AppStrings.signUp,
-                      onPressed: () {
+                      onPressed: () async {
                         if (authCubit.termsAndConditionCheckBoxValue == true) {
                           if (authCubit.signUpFormKey.currentState!
                               .validate()) {
-                            authCubit.signUpWithEmailAndPassword();
+                            await authCubit.signUpWithEmailAndPassword();
                           }
                         }
                       }),
